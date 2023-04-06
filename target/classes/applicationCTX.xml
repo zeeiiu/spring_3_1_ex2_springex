@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calculator" class="com.javalec.ex.Calculator" /> <!--  개발자가 객체 생성하라고 명령내린것. bean하라.객체.
+	                                                            Calculator calculator = new com.javalec.ex.Calculator()하라.
+	 -->
+	<bean id="myCalculator" class="com.javalec.ex.MyCalculator">
+		<property name="calculator"> 
+			<ref bean="calculator"/>
+		</property>
+		<property name="firstNum" value="10" />   <!-- myCalculator.setFirstNum(10)으로 호출해서 들어감 -->
+		<property name="secondNum" value="2"></property>
+	</bean>
+
+</beans>
